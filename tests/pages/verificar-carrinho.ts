@@ -19,7 +19,7 @@ async verificarCarrinho(){
 async verificarCarrinhoPorPoduto(produto: string){
     const shoppingCart = await this.page.getByRole('link', { name: 'shopping cart' });
     await shoppingCart.click();
-    await expect(this.produtoCarrinho).toContainText(produto);
+    await expect(this.produtoCarrinho.first()).toContainText(produto);
 }
   
 }
