@@ -15,7 +15,6 @@ export class HomePage{
     subscribe: Locator;
     copyright: Locator;
     search: Locator;
-    menuOptions: Locator;
     pageTitle: Locator;
     contaButton: Locator;
 
@@ -32,7 +31,6 @@ export class HomePage{
         this.subscribe = this.page.getByLabel('Subscribe');
         this.copyright = this.page.getByText('Copyright © 2013-present');
         this.search = this.page.getByPlaceholder('Search entire store here...');
-        this.menuOptions = this.page.getByTestId('ui-id-4');
         this.pageTitle = this.page.locator('.page-title-wrapper');
         this.contaButton = this.page.locator('[class="nav item"]');
     }
@@ -102,17 +100,6 @@ export class HomePage{
         await ContaButton.click();
         await expect(this.page.locator('[class="message info empty"]')).toContainText('You have submitted no reviews.');
     };
-
-    async clickOnmenuOption(){
-        //await this.menuOptions.click();
-        await this.page.getByRole('menuitem', { name: ' Women' }).click();
-        await this.page.waitForLoadState();
-    }
-
-    async verifyMenu(options: string){
-        //const pageTitle = await this.pageTitle.textContent();
-        await expect(this.pageTitle).toContainText(options);
-    }
 
     async openMyAccount(option: string){
         const contaButton = await this.contaButton.locator(`text=${option}`);

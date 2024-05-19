@@ -1,8 +1,8 @@
-import { Given, Then, When} from "@cucumber/cucumber"
+import { Given, Then } from "@cucumber/cucumber"
 import { HomePage } from "../pages/home-page";
 import { customerLogin } from "../pages/customer-login";
 import { UserDTO } from "../dto/user-dto";
-import { CreateNewCustomerAccount } from "../pages/create-new-customer-account";
+import { CreateNewCustomerAccount } from "../pages/criar-conta-usuario";
 import { CustomerAccout } from "../pages/customer-account";
 import { pageFixture } from "../support/pageFixture";
 import { AnaliseProduto } from "../pages/analise-produto";
@@ -12,7 +12,6 @@ Given('usuário logado no site',{timeout: 60 * 1000}, async function () {
     await homePage.goTo();
     await homePage.goToCreateAnAccount();
     const createNewCustomerAccount = new CreateNewCustomerAccount(pageFixture.page);
-    const CustomerAccount = new CustomerAccout (pageFixture.page);
 
     const userDTO: UserDTO = {
         firstName: 'João',

@@ -9,7 +9,7 @@ let page: Page;
 
 BeforeAll(async function () {
     getEnv();
-    browser = await chromium.launch({ headless: false});
+    browser = await chromium.launch({ headless: true});
 });
 
 Before(async function () {
@@ -35,11 +35,11 @@ After(async function ({ pickle, result }) {
         });
         this.attach(img, 'image/png')
     }
-    await page?.close();
-    await context?.close();
+    await page.close();
+    await context.close();
 });
 
-// AfterAll(async function () {
-//     await browser.close()
-// })
+AfterAll(async function () {
+    await browser.close()
+});
 

@@ -7,7 +7,6 @@ Given('o usuário acessa o site Luma',{timeout: 60 * 1000}, async function () {
     await homePage.goTo();
 });
 
-
 When('visualiza algumas paginas', async function () {
     const homePage = new HomePage(pageFixture.page);
     await homePage.goToLoginAnAccount();

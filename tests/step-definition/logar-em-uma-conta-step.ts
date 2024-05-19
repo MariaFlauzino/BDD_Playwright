@@ -2,7 +2,7 @@ import { Given, Then, When} from "@cucumber/cucumber"
 import { HomePage } from "../pages/home-page";
 import { customerLogin } from "../pages/customer-login";
 import { UserDTO } from "../dto/user-dto";
-import { CreateNewCustomerAccount } from "../pages/create-new-customer-account";
+import { CreateNewCustomerAccount } from "../pages/criar-conta-usuario";
 import { CustomerAccout } from "../pages/customer-account";
 import { pageFixture } from "../support/pageFixture";
 
